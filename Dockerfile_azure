@@ -37,6 +37,9 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /
 # Install Checkov
 RUN curl -fsSL https://raw.githubusercontent.com/bridgecrewio/checkov/main/install.sh | sh
 
+# Install Checkov
+RUN curl -L https://github.com/bridgecrewio/checkov/releases/latest/download/checkov_linux_amd64 -o /usr/local/bin/checkov && \
+    chmod +x /usr/local/bin/checkov
 # Install TFLint 
 RUN curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
