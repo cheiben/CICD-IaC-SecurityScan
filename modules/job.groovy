@@ -16,14 +16,7 @@ pipeline {
             }
         }
         
-        stage('Verify Tools') {
-            steps {
-                sh 'terraform --version'
-                sh 'checkov --version'
-            }
-        }
-        
-        stage('Security Scan - Checkov') {
+        stage('Security Scan') {
             steps {
                 script {
                     try {
