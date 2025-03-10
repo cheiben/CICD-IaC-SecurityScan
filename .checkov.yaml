@@ -1,0 +1,21 @@
+# Checkov configuration file
+compact: true
+directory:
+  - .
+evaluate-variables: true
+framework:
+  - terraform
+  - secrets
+  - all
+download-external-modules: true
+skip-check:
+  - CKV_AWS_18  # Ensure the S3 bucket has access logging enabled
+  - CKV_AWS_52  # Ensure S3 bucket has MFA delete enabled
+skip-path:
+  - "**/.terraform/**"
+quiet: false
+summary-position: bottom
+output:
+  - cli
+  - junitxml
+output-file-path: reports/
